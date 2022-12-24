@@ -38,9 +38,9 @@ void f_UseAutoPtr()
 
 int main(void)
 {
-    f_NoAutoPtr();
+    f_NoAutoPtr(); // not call destructor
 
-    f_UseAutoPtr();
+    f_UseAutoPtr(); // call destructor
 
     return 0;
 }
