@@ -8,7 +8,9 @@ class myMutex{
 
         myMutex()
         :counter(0)
-        {}
+        {
+            std::cout << "myMutex is constructed" << std::endl;
+        }
         ~myMutex()
         {}
 };
@@ -38,6 +40,9 @@ class Lock{
 int main(void)
 {
     myMutex *main_pm;
+
+    main_pm = new myMutex();
+
     Lock lock1(main_pm);
     std::cout << "lock1 " << main_pm->counter << std::endl;
 
