@@ -7,7 +7,7 @@ class myMutex{
         int counter;
 
         myMutex()
-        :counter(1)
+        :counter(0)
         {}
         ~myMutex()
         {}
