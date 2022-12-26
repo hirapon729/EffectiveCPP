@@ -4,7 +4,7 @@ class FontHandle{
 public:
 
     int size; 
-    
+
     FontHandle()
     :size(1)
     {}
@@ -40,7 +40,7 @@ private:
 int main(void)
 {
     
-    // Bad use because 
+    // Bad use
     FontHandle* main_fh;
     changeFontSize( main_fh, 11);
     std::cout << "main_fh font size:" << main_fh->size << std::endl; 
