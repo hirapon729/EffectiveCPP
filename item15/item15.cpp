@@ -60,6 +60,6 @@ int main(void)
     FontHandle* main_fh2;
     main_fh2 = f2;
     f2.~Font(); // main_f2 is released
-    std::cout << "main_fh font size: " << main_fh2->size << std::endl; 
+    std::cout << "main_fh font size: " << main_fh->size << std::endl; 
 
 }
