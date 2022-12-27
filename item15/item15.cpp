@@ -31,6 +31,7 @@ public:
 
     FontHandle* get() const { return f; }
     operator FontHandle*() const { return f; }
+    FontHandle* operator->() const {return f;}
 
 private:
     FontHandle* f;
@@ -53,7 +54,7 @@ int main(void)
     // Good use
     Font f2(main_fh, 2);
     changeFontSize( f2, 18 );
-    std::cout << "f2 font size:" << f2.get()->size << std::endl;
+    std::cout << "f2 font size:" << f2->size << std::endl;
 
     // Bad use
     FontHandle* main_fh2;
