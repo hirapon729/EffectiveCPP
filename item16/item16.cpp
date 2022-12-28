@@ -4,19 +4,17 @@
 class numberList
 {
 public:
+    numberList(void)
+    {
+            std::cout << "Constructed one number" << std::endl;
+            number = new int;
+    }
+    
     numberList(int size)
     :size(size)
     {
-        if(size == 1)
-        {
-            std::cout << "Constructed one number" << std::endl;
-            number = new int;
-        }
-        else
-        {
-            std::cout << "Constructed several numbers" << std::endl;
-            numberlist = new int[size] ;
-        }
+        std::cout << "Constructed several numbers" << std::endl;
+        numberlist = new int[size] ;
     }
 
     ~numberList()
@@ -40,6 +38,11 @@ private:
     int size;
 };
 
+numberList* createNumberList()
+{
+    return new numberList();
+}
+
 numberList* createNumberList(int size)
 {
     return new numberList(size);
@@ -47,8 +50,7 @@ numberList* createNumberList(int size)
 
 int main(void)
 {
-    
-    std::shared_ptr<numberList> one_num(createNumberList(1));
+    std::shared_ptr<numberList> one_num(createNumberList());
     std::shared_ptr<numberList> two_num(createNumberList(2));
 
     return 0;
